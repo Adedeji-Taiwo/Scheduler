@@ -685,7 +685,7 @@ button#add {
   cursor: pointer;
   position: relative;
   left: 32.5%;
-  bottom: 80px;
+  bottom: 115px;
 }
 
 .plus, i.fas.fa-plus {
@@ -1242,8 +1242,8 @@ div#uncategorizedBar {
     gap: 5px;
     margin: 20px;
   }
-
-
+  button#add {
+    bottom: 80px;
   }
 
 

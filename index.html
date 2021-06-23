@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <title>TO-DO APP</title>
+        <meta charset = "utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name = "viewport", content = "width= device-width, initial-scale = 1.0">
+        <script src="//cdnjs.cloudflare.com/ajax/libs/moment.js/2.17.1/moment.min.js"></script>
+        <script src="https://kit.fontawesome.com/edbeb334a3.js" crossorigin="anonymous"></script>
+        <script src="easy-pie-chart.js"></script>
+        <script type="text/javascript" src="loading-bar.js"></script>
+        <script src="https://raw.githack.com/SortableJS/Sortable/master/Sortable.js"></script>
+        <link rel = "icon"; href = "https://res.cloudinary.com/dhegyaino/image/upload/v1619026701/5273796_cr9voy.png">
+        <link id="theme" rel="stylesheet" type="text/css" href="ToDo-dark.css" >
+    </head>
+    <body onload = "nameCheck()">
+        <div id = "signIn">
+            <div id = "form">
+                <button type="button" id="close" onclick="hideSign()" tabindex = "3">X</button>
+                 <h2><b>SIGN UP</b></h2>
+                 <div class = "input">
+                     <div class = "inputBox">
+                        <label>USERNAME</label>
+                        <input id = "uName" type = "text" maxlength="40" tabindex = "1" required onkeypress="return runScript1(event)">
+                     </div>
+                     <div class = "inputBox">
+                        <label>FIRST NAME</label>
+                        <input id = "fName" type = "text" maxlength="40" tabindex = "1" required onkeypress="return runScript2(event)">
+                     </div>
+                     <div class = "inputBox">
+                        <label>LAST NAME</label>
+                        <input id = "lName" type = "text" maxlength="40" tabindex = "1" required onkeypress="return runScript3(event)">
+                     </div>
+                     <div class = "inputBox">
+                        <input type = "submit" id="submit1" disabled="disabled"  onclick="clickHome()" value = "Submit" tabindex = "2">
+                     </div>
+                 </div>
+            </div>  
+        </div>
+        <div id = "popMain1">
+        <header>
+            <div class = "greeting">
+                <h1 class = "salute"></h1>
+                <p class = "remind">
+                    <span id = "num"></span><span id = words></span>
+                    <span id = "bell" onclick="alarmPop()"><i class="fas fa-bell fa-2x">
+                        <span class="tooltiptext">Pending Tasks Reminder</span>
+                    </i></span>
+                </p>
+            </div>
+            <div class= "divider">
+                <button id="modeButton"> 
+                    <span id="modeToggle"><i class="far fa-sun fa-2x" id="dayMoon"></i></span>
+                </button>
+                <div class = "logo">
+                    <div class="logo-container">
+                        <span class="spinner"></span>
+                        <span class="background"></span>
+                        <img class="logo" src="https://res.cloudinary.com/dhegyaino/image/upload/v1619026701/5273796_cr9voy.png" alt = "icon" height="28"/>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main>
+            <div class = "intro">
+                <div class = "message">
+                    <h2>Welcome!</h2>
+                    <p>Let's schedule your tasks and projects</p>
+                    <div class = "click"><button type="button" class="main2btn" onclick="showPopMain2()">Proceed<img src="https://res.cloudinary.com/dhegyaino/image/upload/v1620576400/animated-arrow-image-0061_kvepqh.gif" alt="animated-arrow-image-0061" /></button></div>
+                </div>
+                <div class = "programmer"><img src = "https://res.cloudinary.com/dhegyaino/image/upload/v1619096940/programmer2_qojftl.png" alt = "developer"></div>
+            </div>
+            <fieldset id = "field1">
+                <legend>Your boards</legend>
+                    <div  class = "category" id= "work">
+                        <div class = "avatar"><span class = "suitcase"><i class="fas fa-suitcase"></i></span></div>
+                        <div class = "title">
+                            <h3>Work</h3>
+                            <div id = "workBar" data-preset="line" data-stroke="#0298e0"></div>
+                            <p id = "task1" class = "task"><span  id = "workNum"></span></p>                     
+                        </div>
+                    </div>
+                    <div class = "category" id= "personal">
+                        <div class = "avatar"><span class = "user"><i class="fas fa-user"></i></span></div>
+                        <div class = "title">
+                            <h3>Personal</h3>
+                            <div id = "personalBar" data-preset="line" data-stroke="#18ad85"></div>
+                            <p id = "task2" class = "task"><span id = "personalNum"></span></p>
+                        </div>
+                    </div>
+                    <div class = "category" id= "life">
+                        <div class = "avatar"><span class = "heart"><i class="fas fa-heart"></i></span></div>
+                        <div class = "title">
+                            <h3>Life</h3>
+                            <div id = "lifeBar" data-preset="line" data-stroke="#eb4762"></div>
+                            <p id = "task3" class = "task"><span  id = "lifeNum"></span></p>
+                        </div>
+                    </div>
+                    <div class = "category" id= "study">
+                        <div class = "avatar"><span class = "open"><i class="fas fa-book-open"></i></span></div>
+                        <div class = "title">
+                            <h3>Study</h3>
+                            <div id = "studyBar" data-preset="line" data-stroke="#826bc9"></div>
+                            <p id = "task4" class = "task"><span id = "studyNum"></span></p>
+                        </div>
+                    </div>
+                    <div class = "category" id= "Uncategorized">
+                        <div class = "avatar"><span class = "archive"><i class="fas fa-archive"></i></span></div>
+                        <div class = "title">
+                            <h3>Uncategorized</h3>
+                            <div id = "uncategorizedBar" data-preset="line" data-stroke="#e2b42b"></div>
+                             <p id = "task5" class = "task"><span id = "uncategorizedNum"></span></p>
+                        </div>
+                    </div>
+            </fieldset>
+        </main>
+        </div>
+        <div id = "alarm">
+            <div id = "form">
+                <button type="button" id="close" onclick="hideAlarm()" tabindex = "3">X</button>
+                <h2><b>PENDING TASKS REMINDER</b></h2>
+                <h2 id="clock" class="clock"><b></b></h2>
+                <select id="hours"></select>
+                <select id="minutes"></select>
+                <select id="seconds"></select>
+                <select id="ampm">
+                  <option value="AM">AM</option>
+                  <option value="PM">PM</option>
+                </select>
+                <p>
+                  <button id="snooze" class="hideSnooze">Snooze</button>
+                  <button id="startStop">Set Alarm</button>
+                </p>
+            </div>
+        </div>
+        <div id = "clear">
+            <div id = "form">
+                <button type="button" id="close" onclick="hideClear()">X</button>
+                <h2><b>Clear user data ?</b></h2>
+                <p>
+                    <button id = "yes">Yes</button>
+                    <button id = "no">No</button>
+                </p>
+            </div>
+        </div>
+       <div id = "popMain2">
+           <div id = "container2">
+            <div class = "home" onclick="backToPopMain1()"><i class="fas fa-arrow-left"></i></div>
+            
+            <div class = "profile">
+                <span id = "editPane">
+                    <span class = "edit"><i class="fas fa-pencil-alt"></i></span>
+                    <span class = "reset" onclick="clearPop()"><i class="fas fa-trash"></i></span>
+                    <span class = "cancel"><i class="fas fa-times"></i></span>
+                </span>
+                <div class = "avatar1">
+                    <input type="file" id = "uploadBtn" accept="image/*" hidden>
+                    <label for = "uploadBtn" id = "label"><i class="fas fa-plus"></i></label>
+                </div>
+                <div>
+                    <h1 class = "name">
+                        <span id = "lastName"></span>
+                        <span id = "firstName"></span>
+                    </h1>
+                    <p class = "date"></p>
+                </div>
+                <div class="todo-stats">
+                    <div class="total-tasks">
+                        <span>0</span>
+                        <p>Total</p>
+                    </div>
+                    <div class="completed-tasks">
+                        <span>0</span>
+                        <p>Completed</p>
+                    </div>
+                    <div class="remaining-tasks">
+                    <span>0</span>
+                    <p>Remaining</p>
+                    </div>
+                </div>
+            </div>
+            <div class="chart">
+                <span class = "percent"></span>
+                <span class = "ratio"></span>
+            </div>
+            <fieldset id = "field2">
+                <legend>Work list</legend>
+                <ul id = "sortable"></ul>
+            </fieldset>
+            <button id = "add" onclick="show()"><span class = "plus"><i class="fas fa-plus"></i></span></button>
+          </div>
+        </div>
+        <div id= "popup">
+            <div id = "form">
+                <button type="button" id="close" onclick="hide()" tabindex = "4">X</button>
+                 <h2><b>Add a task</b></h2>
+                 <div class = "input">
+                     <div class = "inputBox">
+                         <label>TITLE</label>
+                         <div class='dropdown'>
+                            <div class='title pointerCursor' id = 'category'>Choose a Category<i class="fa fa-angle-right"></i></div> 
+                            <div class='menu pointerCursor hide'>
+                                <div class='option' id='option1'><i class="fas fa-circle"></i>Uncategorized</div>
+                                <div class='option' id='option2'><i class="fas fa-circle"></i>Work</div>
+                                <div class='option' id='option3'><i class="fas fa-circle"></i>Personal</div>
+                                <div class='option' id='option4'><i class="fas fa-circle"></i>Life</div>
+                                <div class='option' id='option5'><i class="fas fa-circle"></i>Study</div>
+                            </div>
+                        </div>
+                    </div>
+                     <div class = "inputBox">
+                        <label>DESCRIPTION</label>
+                        <input id = "task" type = "text" maxlength="40" tabindex = "2" required>
+                     </div>
+                     <div class = "inputBox">
+                        <input type = "submit" id="submit2" disabled="disabled" value = "Submit" tabindex = "3">
+                     </div>
+                 </div>
+            </div>
+        </div>
+        <footer>Developed with ❤️ by <span>Dhegyaino.</span></footer>
+        <script src ="ToDoApp.js"></script>
+    </body>
+</html>

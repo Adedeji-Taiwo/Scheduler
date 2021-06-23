@@ -23,7 +23,7 @@
 
 - Live link: https://dj-todoapp.netlify.app/
 - Task(s) storage in local storage.
-- Alarm Reminder.
+- Alarm Reminder with Vibration API(Chrome Android) 
 - Reorderable tasks.
 - Task progress bars (linear/circular).
 - Profile Photo Upload.
@@ -42,7 +42,7 @@
 
 <!-- List the features of your application or follow the template. Don't share the figma file here :) -->
 
-The Unconventional ToDo Web Application with neumorphic-insipred UI design.
+The Unconventional ToDo Web Application with neumorphic-insipred UI design. A fully responsive app built with local storage to ensure no data is lost on browser/tab closure. Reorder your tasks based on prorities and set reminder for pending or uncompleted tasks. Visually-pleasing charts to monitor progress and bring you up to speed with task(s) procession. 
 
 
 
@@ -53,6 +53,7 @@ The Unconventional ToDo Web Application with neumorphic-insipred UI design.
 - [Dribble](https://dribbble.com/)
 - [SortableJs](https://github.com/SortableJS/Sortable)
 - [Easy Pie Chart](https://github.com/rendro/easy-pie-chart)
+- [Loading Bar Chart](https://loading.io/progress/) 
 - [Font Awesome](https://fontawesome.com/)
 
 

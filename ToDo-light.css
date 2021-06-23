@@ -1270,7 +1270,9 @@ div#uncategorizedBar {
     margin-top: 20px;
   }
 
-
+  button#add {
+      bottom: 80px;
+    }
   }
 
 
@@ -1291,9 +1293,7 @@ div#uncategorizedBar {
       top: -55px;
     }
     
-    button#add {
-      bottom: 80px;
-    }
+  
   }
 
 

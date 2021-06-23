@@ -1245,6 +1245,8 @@ div#uncategorizedBar {
   button#add {
     bottom: 80px;
   }
+  
+}
 
 
   @media only screen and (max-width: 380px)  {

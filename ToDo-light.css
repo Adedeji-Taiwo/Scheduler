@@ -19,7 +19,7 @@ html {
 body, #container2 {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     min-height: 100vh;
     gap: 30px;
@@ -27,7 +27,9 @@ body, #container2 {
     color: #151313;
 }
 
-
+#container2 {
+  justify-content: center;
+}
 
 #modeButton {
   align-self: center;
@@ -408,6 +410,7 @@ main {
   -moz-border-radius: 20px;
   -ms-border-radius: 20px;
   -o-border-radius: 20px;
+  margin-bottom: 50px;
 }
 
 
@@ -1213,15 +1216,20 @@ div#uncategorizedBar {
     margin-bottom: 26px;
   }
 
-  #field1 {
-    gap: 10px;
-    margin-bottom: 40px;
-  }
-  .category {
-    margin-bottom: 30px;
+   #field1 {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items:center;
+    padding-bottom: 50px;
+    grid-gap: 0;
     gap: 0;
-
+    padding: 0px;
   }
+
+  .category {
+    margin-bottom: 50px
+  }
+  
   .avatar {
     margin-bottom: 20px;
   }

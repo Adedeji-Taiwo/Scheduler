@@ -20,13 +20,16 @@ html {
 body, #container2 {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-betweeen;
     align-items: center;
     min-height: 100vh;
     gap: 30px;
     background: #131419;
     color: #fefefe;
 }
+
+#container2 {
+  justify-content: center;
 
 
 #modeButton {
@@ -370,7 +373,7 @@ main {
     border: 4px solid #525050;
     padding: 5px 2px;
     cursor: pointer;
-    box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.05), 5px 5px 15px rgba(0, 0, 0, 0.5);
+    box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.04), 5px 5px 15px rgba(0, 0, 0, 0.3);
     transition: 0.3s transform cubic-bezier(.155, 1.105, .295, 1.12);
     -webkit-transition: 0.3s transform cubic-bezier(.155, 1.105, .295, 1.12);
     -moz-transition: 0.3s transform cubic-bezier(.155, 1.105, .295, 1.12);

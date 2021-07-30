@@ -428,6 +428,7 @@ legend {
     flex-direction: column;
     justify-content: center;
     gap:40px;
+    margin-bottom: 20px;
     align-items: center;
     text-align: center;
     cursor: pointer;
@@ -1198,12 +1199,17 @@ div#uncategorizedBar {
     padding-bottom: 50px;
     grid-gap: 0;
     gap: 0;
-    padding: 0px;
+    padding-top: 0;
   }
 
   .category {
-    margin-bottom: 50px
+    margin-bottom: 50px;
   }
+  
+  div#work.category  {
+    margin-top: 30px;
+  }
+  
   .avatar {
     margin-bottom: 20px;
   }

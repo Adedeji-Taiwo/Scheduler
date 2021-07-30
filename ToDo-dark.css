@@ -541,9 +541,10 @@ footer span {
 
 
 #editPane {
-  display: flex;
-  gap: 20px;
-  align-self: flex-end;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 30px;
+  align-self: end;
   font-size: 15px;
   background-color: transparent;
   color: #ffffff;
@@ -1223,6 +1224,7 @@ div#uncategorizedBar {
   }
 
   #editPane {
+    display: flex;
     flex-direction: column-reverse;
     gap: 0;
     z-index: 20;

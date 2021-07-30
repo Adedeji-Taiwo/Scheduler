@@ -1198,8 +1198,8 @@ div#uncategorizedBar {
     justify-items:center;
     padding-bottom: 50px;
     grid-gap: 0;
-    gap: 0;
-    padding: 0 30px;*/
+    gap: 0;*/
+    padding: 0 30px;
   }
 
   .category {

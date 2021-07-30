@@ -451,7 +451,7 @@ legend {
   -moz-transform: scale(1.05);
   -ms-transform: scale(1.05);
   -o-transform: scale(1.05);
-  box-shadow: -5px -9px 20px rgba(255, 255, 255, 0.05), 5px 9px 17px rgba(0, 0, 0, 0.6);
+  box-shadow: -5px -5px 10px rgba(255, 255, 255, 0.05), 5px 5px 10px rgba(0, 0, 0, 0.5);
 }
 
 

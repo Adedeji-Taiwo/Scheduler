@@ -1193,13 +1193,13 @@ div#uncategorizedBar {
   }
 
   #field1 {
-    display: grid;
+    /*display: grid;
     grid-template-columns: 1fr;
     justify-items:center;
     padding-bottom: 50px;
     grid-gap: 0;
     gap: 0;
-    padding: 0 30px;
+    padding: 0 30px;*/
   }
 
   .category {

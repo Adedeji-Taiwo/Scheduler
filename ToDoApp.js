@@ -215,102 +215,91 @@ for (let i = 0; i < txt.length; i++) {
 
 
 //Declare variable for first submit button
-//Create an empty array for form field data     
+//Create an empty array for form field data    
 const submit1 = document.querySelector("#submit1");
 let nameKeep = [];
 
 
-//Add event listeners to first submit button
+//Add event listener to second submit button on click
 submit1.addEventListener("click", (e) => {
-    
-    // prevent the page from reloading when submitting the form
-    e.preventDefault();
+
+	//hides form two on click
+	 document.getElementById("signIn").style.display = "none";
+	// prevent the page from reloading when submitting the form
+	e.preventDefault();
 
 
-    //vibration API call on signUp
-    window.navigator.vibrate(300);
+	 //vibration API call on signUp
+	if (Boolean(window.navigator.vibrate) || Boolean(window.navigator.mozVibrate)) {
+	    window.navigator.vibrate =
+		window.navigator.vibrate || window.navigator.mozVibrate;  
 
-    //Obtain values from form input fields 
-    const uName = document.getElementById("uName").value;
-    const fName = document.getElementById("fName").value;
-    const lName = document.getElementById("lName").value;
+	    window.navigator.vibrate(300);
+	}
 
-    //Authenticate form fields
+	//variables for form two input content/value
+	  //Obtain values from form input fields 
+	const uName = document.getElementById("uName").value;
+	const fName = document.getElementById("fName").value;
+	const lName = document.getElementById("lName").value;
+
+ //Authenticate form fields
     if (uName === "" || fName === "" || lName === "") {
         alert("All fields are required");
     }
-
+	
     else {    
         const nameItem = {
         uName: uName,
         fName: fName,
         lName: lName
-    }
-
-    //Append form field data into empty array 
+	}
+	
+     //Append form field data into empty array 
     nameKeep.push(nameItem);
     //Save array contents into localStorage 
     localStorage.setItem("Name", JSON.stringify(nameKeep));
     
     setName();
-    }
-})
-            
-//Display all names obtained from form fields in designated elements
-function setName() {
-nameKeep.forEach(function(item) {
-    const username = document.createElement("span");
-    username.textContent = item.uName;
-    salute.appendChild(username);
-    document.querySelector("#firstName").textContent = item.fName;
-    document.querySelector("#lastName").textContent = item.lName;
-
-})
-}
-
-
-submit1.addEventListener("click", () => {
-    if (uName === "" || fName === "" || lName === "") {
-        document.getElementById("popMain1").style.display = "none";
-        document.getElementById("signIn").style.display = "block";
-
-    }
-})
-
-if (uName === "" || fName === "" || lName === "") {
-    document.querySelector("#close").removeEventListener("click", () => {
-        document.getElementById("signIn").style.display = "none";
-    
+	 
     document.getElementById("uName").value = "";
     document.getElementById("fName").value = "";
     document.getElementById("lName").value = "";
+    }
+	
+})
+
+
+function setName() {
+    nameKeep.forEach(function(item) {
+        const username = document.createElement("span");
+        username.textContent = item.uName;
+        salute.appendChild(username);
+        document.querySelector("#firstName").textContent = item.fName;
+        document.querySelector("#lastName").textContent = item.lName;
     })
+
 }
 
 
-//Function to verify if name exists/signedUp in localStorage 
 function nameCheck(task) {
+  nameKeep = JSON.parse(localStorage.getItem("Name")) || [];
 
-nameKeep = JSON.parse(localStorage.getItem("Name")) || [];
-
-
-if (localStorage.getItem("Name")) {
+  if (localStorage.getItem("Name")) {
     document.getElementById("signIn").style.display = "none";
     document.getElementById("popMain1").style.display = "block";
-    document.getElementById("popMain2").style.display = "none";
+    document.getElementById("popMain2").style.display = "none"; //Displays names if they exist in localStorage
 
-    //Displays names if they exist in localStorage
-    nameKeep.map(() => {
-        setName();  
+    nameKeep.map(function () {
+      setName();
     });
-}
-else {
+  } else {
     document.getElementById("signIn").style.display = "block";
     document.getElementById("popMain1").style.display = "block";
     document.getElementById("popMain2").style.display = "none";
+  }
 }
 
-}
 
 
 

@@ -269,16 +269,14 @@ submit1.addEventListener("click", (e) => {
 	
 })
 
-
 function setName() {
-    nameKeep.forEach(function(item) {
-        const username = document.createElement("span");
-        username.textContent = item.uName;
-        salute.appendChild(username);
-        document.querySelector("#firstName").textContent = item.fName;
-        document.querySelector("#lastName").textContent = item.lName;
-    })
-
+	nameKeep.forEach(function(item) {
+	    const username = document.createElement("span");
+	    username.textContent = `${(item.uName[0]).toUpperCase()}${(item.uName.slice(1, (item.uName).length))}`;
+	    salute.appendChild(username);
+	    document.querySelector("#firstName").textContent = `${(item.fName[0]).toUpperCase()}${(item.fName.slice(1, (item.fName).length))}`;
+	    document.querySelector("#lastName").textContent = `${(item.lName[0]).toUpperCase()}${(item.lName.slice(1, (item.lName).length))}`;
+	})
 }
 
 

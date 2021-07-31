@@ -1269,6 +1269,10 @@ div#uncategorizedBar {
     .divider {
       margin-top: 5px;
     }
+    
+    .salute {
+      font-size: 30px;
+    }
 
     #form {
       width: 85%;

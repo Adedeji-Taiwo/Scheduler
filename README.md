@@ -60,5 +60,5 @@ The Unconventional ToDo Web Application with neomorphic-inspired UI design. A fu
 ## Contact
 
 <!--- Website [your-website.com](https://{your-web-site-link})-->
-- GitHub [@Adedeji-Taiwo](https://{github.com/Adedeji-Taiwo})
+- LinkedIn [@Adedeji-Taiwo](https://{linkedin.com/in/adedeji-taiwo})
 - Twitter [@Dhegyaino16](https://{twitter.com/Dhegyaino16})
